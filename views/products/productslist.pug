@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+    .row
+        .col-sm-8
+            h1=tit
+        .col-sm-4
+            a(href="/products/add",class="btn btn-success float-right") add product
+
+    
+    table.table
+        thead
+            tr
+                th Name
+                th Price
+                th Action
+
+        tbody
+            each product in products
+                tr
+
+                    td=product.name
+                    td=product.price
+                    td
+                        a(href="/products/edit/"+product._id,class="btn btn-warning") Edit
+                        a(href="/products/delete/"+product._id,class="btn btn-info") Delete
